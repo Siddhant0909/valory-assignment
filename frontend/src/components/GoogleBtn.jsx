@@ -13,7 +13,7 @@ const GoogleBtn = () => {
     <button
       type="submit"
       onClick={googleLogin}
-      className="w-full text-black btn hover:bg-slate-300 bg-slate-100"
+      className="w-full text-black btn hover:bg-base-300 bg-base-200"
     >
       <img src="google-icon.svg" />
       Sign in with Google
