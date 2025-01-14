@@ -48,7 +48,7 @@ export const useAuthStore = create((set, get) => ({
     set({ isSigningUp: true });
     try {
       const res = await axiosInstance.post("/user/select-role", data);
-      set({ authUser: res.data, isAuthenticated: true });
+      set({ authUser: res.data, isAuthenticated: true, formStep: 1 });
       toast.success("Account created successfully");
     } catch (error) {
       toast.error(error.response.data.message);
@@ -65,7 +65,7 @@ export const useAuthStore = create((set, get) => ({
           `/user/google?code=${authResult.code}`
         );
         if (!res.data?.isNewUser) {
-          set({ authUser: res.data, isAuthenticated: true });
+          set({ authUser: res.data, isAuthenticated: true, formStep: 1 });
           toast.success("Login Success!");
         } else {
           set({ authUser: res.data, formStep: 3 });
@@ -84,7 +84,7 @@ export const useAuthStore = create((set, get) => ({
     set({ isLoggingIn: true });
     try {
       const res = await axiosInstance.post("/user/login", data);
-      set({ authUser: res.data });
+      set({ authUser: res.data, isAuthenticated: true });
       toast.success("Login Success!");
     } catch (error) {
       toast.error(error.response.data.message);
