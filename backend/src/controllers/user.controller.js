@@ -30,12 +30,14 @@ export const registerUser = async (req, res) => {
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     const hashedOtp = await bcrypt.hash(otp, salt);
 
+    const initialsUrl = `https://ui-avatars.com/api/?name=${fullName}&background=random`;
     const newUser = new User({
       email,
       fullName,
       password: hashedPass,
       otp: hashedOtp,
       otpExpiry: Date.now() + 5 * 60 * 1000,
+      profilePic: initialsUrl,
     });
 
     if (newUser) {
