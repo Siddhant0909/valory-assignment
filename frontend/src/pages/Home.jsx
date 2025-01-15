@@ -67,7 +67,7 @@ const Home = () => {
       </aside>
 
       <main className="flex-1 p-6">
-        <h1 className="text-3xl font-bold">Welcome {authUser.fullName}!!!</h1>
+        <h1 className="text-3xl font-bold">Welcome {authUser.fullName}</h1>
         <p className="mt-4 text-xl text-gray-600">
           Current Role: {authUser.role}
         </p>
