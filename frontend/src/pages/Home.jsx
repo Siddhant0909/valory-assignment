@@ -49,8 +49,10 @@ const Home = () => {
 
         <div className="flex items-center p-4 border-t">
           <img
-            src={authUser?.profilePic}
+            src={authUser.profilePic}
             alt="Profile"
+            crossorigin="anonymous"
+            referrerPolicy="no-referrer"
             className="w-10 h-10 rounded-full"
           />
           <div className="ml-3">
