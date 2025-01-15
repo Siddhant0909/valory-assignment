@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
 
@@ -51,7 +51,6 @@ const Home = () => {
           <img
             src={authUser.profilePic}
             alt="Profile"
-            crossorigin="anonymous"
             referrerPolicy="no-referrer"
             className="w-10 h-10 rounded-full"
           />
